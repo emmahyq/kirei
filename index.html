@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Kirei ‣ beautiful and clean</title>
+<meta charset="UTF-8">
+<meta name="description" content=" ">
+<link rel="icon" href=" ">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<script src="https://kit.fontawesome.com/89e5948346.js" crossorigin="anonymous"></script>
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<style>
+
+body,h1, h2, h3, h4, h5, p, a, form, textarea {font-family: "Epilogue", sans-serif; font-weight: 300}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="overall-padding">
+
+    <div class="body-padding center-align">
+     
+        <img class="no-select" id="title-image" src="search1.svg">
+        <h1 class="bold">Care for your skin.</h1>
+        <p>Check your cosmetics for potentially <span class="bold">acne-inducing</span> ingredients.</p>
+    
+        <div id="input-div">
+            <form>
+                <textarea placeholder="Copy and paste the ingredients list of your product here, with each ingredient seperated by commas. Remove any items in parentheses, such as the (water) in aqua (water)." id="userInput" name="Ingredients List" class="input"></textarea>
+                <div class="btn-padding">
+                    <button id="submitInput" class="button" type="button">Search</button>
+                </div>
+            </form>
+        </div>
+    
+    
+        <p id="demo"></p>
+        
+    </div>
+    
+    <div id="outputted" class="output-padding">
+    
+    </div>
+
+</div>
+
+<script type="text/javascript" src="data.js"></script>
+
+<script>
+
+
+    // var userInput = document.getElementById("userInput").value;
+    // const userArr = userInput.split(",");
+
+    myMap = new Map();
+    data.forEach(addToMap);
+    //jsonArr = JSON.parse(data);
+
+    function addToMap(value, index, array) {
+        var item = new Object;
+        item.title = value.name;
+        item.desc = value.desc;
+        item.link = value.link;
+
+        myMap.set(value.name.toLowerCase(), item);
+    }
+
+    //text = myMap.get("avocado oil");
+
+    $("#submitInput").click(function(){
+        document.getElementById("demo").innerHTML = "";
+        document.getElementById("outputted").innerHTML = "";
+
+        var userInput = document.getElementById("userInput").value;
+        const userArr = userInput.split(",");
+
+        if (userInput == "") { // validate the input
+            document.getElementById("demo").innerHTML = "Wait! You didn't type in anything :(";
+            return;
+        }
+
+        var output = "";
+        for (var key of userArr) {
+
+            var val = myMap.get(key.trim().toLowerCase());
+            if (val != null)
+                output += '<div class="output-box"><h1>' + val.title + ' <a target="_blank" href="' + val.link + '">🛈</a></h1></a><p>' + val.desc + '</p></div>';
+        }
+
+        if (output == "") { // if nothing matches
+            output += '<div class="nothing-box"><h1>Amazing! :)</h1><h2>Your product is clean of most acne-causing ingredients!</h2><p>Keep in mind that each person is different and <span class="bold">may have different sensitivities and reactions</span> to certain substances. You may still experience breakouts and irritation caused by this and other cosmetic products, so be careful and always <span class="bold">stop using a product immediately</span> if you think it is causing acne.</p></div>';
+        }
+
+        document.getElementById("outputted").innerHTML = output;
+    });
+
+    // document.getElementById("demo").innerHTML = text;
+</script>
+
+
+</body>
+</html>

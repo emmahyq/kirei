@@ -1,0 +1,247 @@
+:root {
+    --heading-color: #33272a;
+    --text-color: #594a4e;
+  
+    --main-color: #fffffe;
+    --second-color: #ffc6c7;
+    --third-color: #c3f0ca;
+  
+    --bg-color: #faeee7;
+    --btn-color: #ff8ba7;
+    --outline-color: var(--heading-color);
+
+    --border-radius: 6px;
+    --border-width: 2.35px;
+  }
+
+  html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+
+  body {
+    margin: 0;
+  }
+
+body {
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+
+::-moz-selection { /* Code for Firefox */
+    color: var(--main-color);
+    background: var(--btn-color);
+}
+
+::selection {
+    color: var(--main-color);
+    background: var(--btn-color);
+}
+
+.no-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.overall-padding {
+    padding: 0em 1em 0em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    margin: 0.5em;
+    line-height: 1.1em;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.white-bg {
+    background-color: var(--main-color);
+}
+
+#title-image {
+    padding-bottom: 10px;
+    padding-top: 5px;   
+}
+
+.btn-padding {
+    padding-top: 15px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+p {
+    color: var(--text-color);
+    margin: 1em;
+    line-height: 1.3em;
+}
+
+.button {
+    background-color: var(--btn-color);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--main-color);
+    padding: 12px 48px;
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid var(--outline-color);
+    transition: 150ms all;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+#input-div {
+    padding: 7px 0px 5px;
+}
+
+.input {
+    background-color: var(--main-color);
+    border-radius: var(--border-radius);
+    padding: 15px 15px;
+    border: var(--border-width) solid var(--outline-color);
+}
+
+.body-padding {
+    padding: 10em 0em 3em;
+    max-width: 60rem;
+    margin: auto;
+}
+
+.output-padding {
+    padding: 0em 0em 5em;
+    max-width: 60rem;
+    margin: auto;
+}
+
+.info-padding {
+    padding: 3em 0em 5em;
+    max-width: 60rem;
+    margin: auto;
+}
+
+.output-box {
+    border: var(--border-width) solid var(--outline-color);
+    border-radius: var(--border-radius);
+    background-color: var(--main-color);
+    padding: 15px;
+    margin: 1.8em;
+}
+
+.output-box h1 {
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.nothing-box {
+    border: var(--border-width) solid var(--outline-color);
+    border-radius: var(--border-radius);
+    background-color: var(--second-color);
+    padding: 15px;
+    margin: 1.8em; 
+    text-align: center;
+}
+
+.nothing-box h1 {
+    font-weight: bold;
+    font-size: 1.4em;
+    line-height: 1.3em;
+}
+
+.nothing-box h2 {
+    font-size: 1.2em;
+}
+
+.nothing-box p {
+    font-size: 0.9em;
+}
+
+.output-box a {
+    font-size: 0.7em;
+    text-decoration: none;
+    color: var(--btn-color);
+    transition: 150ms all;
+}
+
+.output-box a:hover {
+    opacity: 0.8;
+}
+
+.info-box {
+    /* border: var(--border-width) solid var(--outline-color); */
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    padding: 15px;
+    margin: 1.8em;
+}
+
+.info-box h1 {
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.info-box a {
+    font-size: 0.7em;
+    text-decoration: none;
+    color: var(--btn-color);
+    transition: 150ms all;
+}
+
+.info-box a:hover {
+    opacity: 0.8;
+}
+
+.periodic-img {
+    width: 60px; 
+    padding-left: 0.8em; 
+    padding-top: 1.1em;
+}
+
+.center-align {
+    text-align: center;
+}
+
+::-webkit-input-placeholder { /* Edge */
+    color: var(--btn-color);
+    opacity: 0.7;
+    line-height: 1.2em;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--btn-color);
+    opacity: 0.7;
+    line-height: 1.2em;
+  }
+  
+  ::placeholder {
+    color: var(--btn-color);
+    opacity: 0.8;
+    line-height: 1.2em;
+  }
+
+  textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 90%;
+    height: 9em;
+
+    transition: 150ms all;
+}
+
+textarea:focus {
+    border-color: var(--text-color);
+    outline: none;
+}
