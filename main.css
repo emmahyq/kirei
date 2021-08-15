@@ -23,6 +23,21 @@
     margin: 0;
   }
 
+a.text {
+    font-size: inherit;
+    text-decoration: none;
+    color: var(--btn-color);
+    transition: 150ms all;
+}
+
+a.text:hover {
+    opacity: 0.8;
+}
+
+.top {
+    padding-top: 8px;
+}
+
 body {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
@@ -202,10 +217,21 @@ p {
     opacity: 0.8;
 }
 
+.info-box a.text {
+    font-size: inherit;
+    text-decoration: none;
+    color: var(--btn-color);
+    transition: 150ms all;
+}
+
+.info-box a.text:hover {
+    opacity: 0.8;
+}
+
 .periodic-img {
     width: 60px; 
     padding-left: 0.8em; 
-    padding-top: 1.1em;
+    padding-top: 1.2em !important;
 }
 
 .center-align {

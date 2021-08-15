@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Kirei ‣ beautiful and clean</title>
+<meta charset="UTF-8">
+<meta name="description" content=" ">
+<link rel="icon" href=" ">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<script src="https://kit.fontawesome.com/89e5948346.js" crossorigin="anonymous"></script>
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<style>
+
+body,h1, h2, h3, h4, h5, p, a, form, textarea {font-family: "Epilogue", sans-serif; font-weight: 300}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <p class="center-align top"><a class="text" href="index.html">Ingredient search ▸</a></p>
+
+<div class="overall-padding">
+
+    <div class="body-padding center-align">
+     
+        <img class="no-select" id="title-image" src="lotion1.svg">
+        <h1 class="bold">So, what helps?</h1>
+        <p>Here are some good ingredients that may help or alliviate acne symptoms. They should all be used in moderation - <span class="bold">too much of anything</span> may put even more stress on your skin.</p>
+        <p><span class="bold">I am not a doctor, licensed esthetician, or any sort of specialist</span> in skin and acne. This information is just based on what works for me. :)</p>
+    
+        
+    </div>
+
+</div>
+
+<div class="white-bg">
+    
+    <div id="info" class="overall-padding info-padding">
+
+    <!--   <div class="info-box">
+            <img class="no-select" id="title-image" src="periodic/nd.svg" style="width: 60px; padding-left: 0.8em; padding-top: 1.1em;">
+            <h1>Niacinimide <a target="_blank" href=" ">🛈</a></h1></a>
+            <p>Description</p>
+        </div> -->
+
+    </div>
+
+</div>
+
+<script type="text/javascript" src="tips.js"></script>
+
+<script>
+
+myMap = new Map();
+    data.forEach(addToMap);
+    //jsonArr = JSON.parse(data);
+
+    function addToMap(value, index, array) {
+        var item = new Object;
+        item.title = value.name;
+        item.link = value.link;
+        item.desc = value.desc;
+        item.rec = value.rec;
+        item.reclink = value.reclink;
+        item.abv = value.abv;
+
+        myMap.set(value.name.toLowerCase(), item);
+    }
+
+    $(document).ready(function() {
+
+        document.getElementById("info").innerHTML = "";
+        const itemArr = ["niacinamide", "salicylic acid", "benzoyl peroxide", "glycolic acid", "vitamin c", "hyaluronic acid", "hydrocolloid patches"];
+
+        var output = "";
+        for (var key of itemArr) {
+
+            var val = myMap.get(key.trim().toLowerCase());
+            if (val != null)
+                output += '<div class="info-box"><img class="no-select periodic-img" id="title-image" src="periodic/' + val.abv + '.svg"><h1>' + val.title + ' <a target="_blank" href="' + val.link + '">🛈</a></h1></a><p>' + val.desc + '</p><p>My pick: <a class="text" target="_blank" href="' + val.reclink + '">' + val.rec + '</a></div>';
+        }
+
+        document.getElementById("info").innerHTML = output; 
+
+    });
+
+
+</script>
+
+
+</body>
+</html>
