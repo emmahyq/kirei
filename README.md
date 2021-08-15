@@ -1,6 +1,8 @@
 # Kirei
 Github repo for hackathon project Kirei!
 
+Kirei is a search engine where you can input a cosmetic product ingredients list (with ingredients comma-separated) and Kirei will return a list of ingredients present in the product that may cause acne or irritation, complete with Wikipedia link and simple, easy-to-understand description.
+
 sources: 
 
 * [Lamav - 13 Acne-Causing Ingredients](https://lamav.com/blogs/articles/13-common-ingredients-in-cosmetics-that-actually-cause-acne)
@@ -12,3 +14,4 @@ sources:
 * [Byrdie - Acne-Causing Ingredients](https://www.byrdie.com/acne-causing-ingredients-4845040)
 * [Face Reality - Pore-Clogging Ingredients](https://facerealityskincare.com/pages/pore-clogging-ingredients)
 
+all Wikipedia pages are linked to in each ingredient entry!
